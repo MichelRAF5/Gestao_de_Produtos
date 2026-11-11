@@ -40,7 +40,10 @@ public class Produto {
     }
 
     public void removerEstoque(int qtd) {
-        quantidadeEstoque -= qtd;
+        if (quantidadeEstoque >= qtd) {
+            quantidadeEstoque -= qtd;
+        } else
+            System.out.println("A quantidade solicitada para retirada é maior que a quantidade em estoque");
     }
 
     public double calcularValorTotalEstoque() {
